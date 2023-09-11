@@ -101,16 +101,16 @@ fun LoginScreen() {
             }
 
             Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Remember me", style = MaterialTheme.typography.labelSmall)
+            Text(text = stringResource(id = R.string.remember_me_label), style = MaterialTheme.typography.labelSmall)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(text = "Forgot Password?", style = MaterialTheme.typography.labelSmall)
+            Text(text = stringResource(id = R.string.remember_me_label), style = MaterialTheme.typography.labelSmall)
             Spacer(modifier = Modifier.size(4.dp))
             ClickableText(
-                text = AnnotatedString("Click Here"),
+                text = AnnotatedString(stringResource(id = R.string.click_here_label)),
                 onClick = {},
                 style = MaterialTheme.typography.labelSmall.copy(color = Color(0xff347AB6))
             )
@@ -119,12 +119,14 @@ fun LoginScreen() {
         Button(
             onClick = { },
             shape = RoundedCornerShape(8.dp),
-            modifier = Modifier.fillMaxWidth().height(40.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(40.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xff347AB6)
             )
         ) {
-            Text(text = "Sign In", style = MaterialTheme.typography.labelSmall)
+            Text(text = stringResource(id = R.string.sign_in_label), style = MaterialTheme.typography.labelSmall)
         }
 
     }
