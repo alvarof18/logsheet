@@ -107,7 +107,7 @@ fun LoginScreen() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(text = stringResource(id = R.string.remember_me_label), style = MaterialTheme.typography.labelSmall)
+            Text(text = stringResource(id = R.string.forgot_password_label), style = MaterialTheme.typography.labelSmall)
             Spacer(modifier = Modifier.size(4.dp))
             ClickableText(
                 text = AnnotatedString(stringResource(id = R.string.click_here_label)),
