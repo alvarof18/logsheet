@@ -10,6 +10,15 @@
     <string name="remember_me_label">Remember me</string>
     <string name="forgot_password_label">Forgot Password?</string>
 
-    <string name="click_here_label">"Click Here"</string>
-    <string name="sign_in_label">"Sign In""</string>
+    <string name="click_here_label">Click Here</string>
+    <string name="sign_in_label">Sign In</string>
+
+    <string name="what_dashboard">What would you like to access today?</string>
+    <string name="PPU1_title">PPU1</string>
+    <string name="SSGPP_title">SSGPP</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="measure_title">Parameter Plant</string>
+
+    <string name="Setting">Setting</string>
+
 </resources>
