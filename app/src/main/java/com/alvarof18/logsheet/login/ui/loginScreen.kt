@@ -45,13 +45,15 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.alvarof18.logsheet.R
+import com.alvarof18.logsheet.config.MainRoutes
 import com.alvarof18.logsheet.ui.theme.LogsheetTheme
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     var email by remember {
         mutableStateOf("")
     }
@@ -117,7 +119,7 @@ fun LoginScreen() {
         }
         Spacer(modifier = Modifier.height(24.dp))
         Button(
-            onClick = { },
+            onClick = { navController.navigate(MainRoutes.DashboardGraph.route) },
             shape = RoundedCornerShape(8.dp),
             modifier = Modifier
                 .fillMaxWidth()
@@ -181,13 +183,5 @@ fun LoginCustomField(
             visualTransformation = if (isPasswordField) PasswordVisualTransformation() else VisualTransformation.None,
         )
 
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun LoginScreenPreview() {
-    LogsheetTheme {
-        LoginScreen()
     }
 }

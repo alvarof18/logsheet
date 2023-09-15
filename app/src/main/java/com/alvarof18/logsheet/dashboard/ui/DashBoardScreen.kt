@@ -61,7 +61,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.alvarof18.logsheet.R
+import com.alvarof18.logsheet.config.Routes
 import com.alvarof18.logsheet.dashboard.ui.model.MenuItems
 import com.alvarof18.logsheet.dashboard.ui.model.getItemsMenu
 import com.alvarof18.logsheet.ui.theme.BluePrimary
@@ -72,7 +75,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DashBoardScreen() {
+fun DashBoardScreen(navController: NavController) {
     val navigationState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
@@ -83,7 +86,7 @@ fun DashBoardScreen() {
             Column(Modifier.padding(it)) {
                 HeaderDashBoard(onClick = { Log.i("Alvaro", "Patitos Feos") })
                 Spacer(modifier = Modifier.height(24.dp))
-                BodyDashBoard()
+                BodyDashBoard(navController)
             }
         }
     }
@@ -170,7 +173,7 @@ fun HeaderDashBoard(isDrawerMenu: Boolean = false, onClick: () -> Unit) {
 }
 
 @Composable
-fun BodyDashBoard() {
+fun BodyDashBoard(navController: NavController) {
     Column(modifier = Modifier.padding(horizontal = 32.dp)) {
         Text(
             text = stringResource(id = R.string.what_dashboard),
@@ -179,8 +182,10 @@ fun BodyDashBoard() {
         )
         Spacer(modifier = Modifier.height(8.dp))
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            BodyDashBoardCard(label = stringResource(id = R.string.PPU1_title))
-            BodyDashBoardCard(label = stringResource(id = R.string.SSGPP_title))
+            BodyDashBoardCard(label = stringResource(id = R.string.PPU1_title),
+                navigateTo = {navController.navigate(Routes.SSGPPScreenNav.route)}
+            )
+            BodyDashBoardCard(label = stringResource(id = R.string.SSGPP_title), navigateTo = {navController.navigate(Routes.SSGPPScreenNav.route)})
         }
 
     }
@@ -188,11 +193,11 @@ fun BodyDashBoard() {
 }
 
 @Composable
-fun BodyDashBoardCard(label: String) {
+fun BodyDashBoardCard(label: String, navigateTo: () -> Unit) {
     Card(
         Modifier
             .size(width = 150.dp, height = 100.dp)
-            .clickable { }, colors = CardDefaults.cardColors(
+            .clickable { navigateTo() }, colors = CardDefaults.cardColors(
             containerColor = Color(0xffD6E4F0)
         )
     ) {
@@ -297,13 +302,4 @@ fun DrawerFooter() {
         }
     }
 
-}
-
-
-@Preview
-@Composable
-fun previewDashBoardScreen() {
-    LogsheetTheme {
-        DashBoardScreen()
-    }
 }
