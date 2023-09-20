@@ -93,6 +93,20 @@
     <string name="aa_002_label">AA-002 (%)</string>
     <string name="main_steam_temperature_label">Main Steam Temperature (Cº)</string>
     <string name="inlet_turbine_label">Inlet Turbine (Barg)</string>
-    <string name="inlet_turbine_label">Total Steam Flow (T/h)</string>
+    <string name="total_steam_flow_label">Total Steam Flow (T/h)</string>
+    <string name="stage_bowl_pressure_label">1st Stage Bowl pressure (Barg)</string>
+    <string name="flow_ejector_label">Flow Ejector (T/h)</string>
+    <string name="turbine_generator_vibration_label">Turbine Generator Vibration</string>
+    <string name="speed_label">Speed (Rpm)</string>
+    <string name="eccentricity_label">Eccentricity (umP)</string>
+    <string name="thrust_position_label">Thrust Position (mm)</string>
+    <string name="vibration_bearing_x_label">Vibration Bearing 1-X</string>
+    <string name="vibration_bearing_y_label">Vibration Bearing 1-Y</string>
+    <string name="vibration_bearing_2x_label">Vibration Bearing 2-X</string>
+    <string name="vibration_bearing_2y_label">Vibration Bearing 2-Y</string>
+    <string name="vibration_bearing_3x_label">Vibration Bearing 3-X</string>
+    <string name="vibration_bearing_3y_label">Vibration Bearing 3-Y</string>
+    <string name="vibration_bearing_4x_label">Vibration Bearing 4-X</string>
+    <string name="vibration_bearing_4y_label">Vibration Bearing 4-Y</string>
 
 </resources>

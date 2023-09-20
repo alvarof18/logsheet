@@ -17,7 +17,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CameraAlt
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.FilledTonalButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -122,6 +128,59 @@ fun HeaderForm(navController: NavController) {
 
 
 @Composable
+fun FooterForm() {
+    LabelSSGPP(title = R.string.confirmation)
+    Spacer(modifier = Modifier.height(24.dp))
+    OutlinedButton(
+        shape = RoundedCornerShape(8.dp),
+        border = BorderStroke(1.dp, color = Color(0xffBBABEC1)),
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(120.dp),
+        onClick = { /*TODO*/ }) {
+        Icon(imageVector = Icons.Default.CameraAlt, contentDescription = "", tint = Color.Black)
+    }
+    Spacer(modifier = Modifier.height(8.dp))
+    CustomTextField(
+        textInput = "",
+        label = R.string.remarks_label,
+        onValueChange = {},
+    )
+    Spacer(modifier = Modifier.height(8.dp))
+    CustomTextField(
+        textInput = "",
+        label = R.string.submitted_by_label,
+        onValueChange = {},
+    )
+
+    Spacer(modifier = Modifier.height(8.dp))
+    CustomTextField(
+        textInput = "",
+        label = R.string.approver_label,
+        onValueChange = {},
+    )
+
+    Spacer(modifier = Modifier.height(16.dp))
+    FilledTonalButton(
+        shape = RoundedCornerShape(8.dp),
+        modifier = Modifier.fillMaxWidth(),
+        colors = ButtonDefaults.filledTonalButtonColors(containerColor = Color(0xff347AB6)),
+        onClick = { /*TODO*/ }) {
+        Text(text = "Save", style = MaterialTheme.typography.labelSmall, color = Color.White)
+    }
+    FilledTonalButton(
+        shape = RoundedCornerShape(8.dp),
+        modifier = Modifier.fillMaxWidth(),
+        colors = ButtonDefaults.filledTonalButtonColors(containerColor = Color(0xffCB3A31)),
+        onClick = { /*TODO*/ }) {
+        Text(text = "Cancel", style = MaterialTheme.typography.labelSmall, color = Color.White)
+    }
+
+}
+
+
+
+@Composable
 fun CustomChip(items: Int, valueList: List<String>) {
     var selectedItem by remember {
         mutableStateOf(-1)
@@ -160,8 +219,6 @@ fun CustomChip(items: Int, valueList: List<String>) {
 
     }
 }
-
-
 
 @Composable
 fun CustomTextField(

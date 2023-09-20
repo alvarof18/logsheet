@@ -45,6 +45,7 @@ import com.alvarof18.logsheet.Backbutton
 import com.alvarof18.logsheet.R
 import com.alvarof18.logsheet.ssgpp.ui.common.CustomChip
 import com.alvarof18.logsheet.ssgpp.ui.common.CustomTextField
+import com.alvarof18.logsheet.ssgpp.ui.common.FooterForm
 import com.alvarof18.logsheet.ssgpp.ui.common.HeaderForm
 import com.alvarof18.logsheet.ssgpp.ui.common.LabelSSGPP
 import com.alvarof18.logsheet.ui.theme.LogsheetTheme
@@ -61,6 +62,8 @@ fun GeneratorParmScreen(navController: NavController) {
         HeaderForm(navController = navController)
         Spacer(modifier = Modifier.height(16.dp))
         BodyForm()
+        Spacer(modifier = Modifier.height(24.dp))
+        FooterForm()
     }
 }
 
@@ -285,57 +288,10 @@ fun BodyForm() {
             label = R.string.air_cooler_temp_outlet_label,
             onValueChange = {},
         )
-        Spacer(modifier = Modifier.height(24.dp))
-        LabelSSGPP(title = R.string.confirmation)
-        Spacer(modifier = Modifier.height(24.dp))
-        OutlinedButton(
-            shape = RoundedCornerShape(8.dp),
-            border = BorderStroke(1.dp, color = Color(0xffBBABEC1)),
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(120.dp),
-            onClick = { /*TODO*/ }) {
-            Icon(imageVector = Icons.Default.CameraAlt, contentDescription = "", tint = Color.Black)
-        }
-        Spacer(modifier = Modifier.height(8.dp))
-        CustomTextField(
-            textInput = "",
-            label = R.string.remarks_label,
-            onValueChange = {},
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-        CustomTextField(
-            textInput = "",
-            label = R.string.submitted_by_label,
-            onValueChange = {},
-        )
 
-        Spacer(modifier = Modifier.height(8.dp))
-        CustomTextField(
-            textInput = "",
-            label = R.string.approver_label,
-            onValueChange = {},
-        )
-
-        Spacer(modifier = Modifier.height(16.dp))
-        FilledTonalButton(
-            shape = RoundedCornerShape(8.dp),
-            modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.filledTonalButtonColors(containerColor = Color(0xff347AB6)),
-            onClick = { /*TODO*/ }) {
-            Text(text = "Save", style = MaterialTheme.typography.labelSmall, color = Color.White)
-        }
-        FilledTonalButton(
-            shape = RoundedCornerShape(8.dp),
-            modifier = Modifier.fillMaxWidth(),
-            colors = ButtonDefaults.filledTonalButtonColors(containerColor = Color(0xffCB3A31)),
-            onClick = { /*TODO*/ }) {
-            Text(text = "Cancel", style = MaterialTheme.typography.labelSmall, color = Color.White)
-        }
     }
 
 }
-
 
 @Preview(showBackground = true)
 @Composable
