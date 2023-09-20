@@ -7,12 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.alvarof18.logsheet.dashboard.ui.DashBoardScreen
-import com.alvarof18.logsheet.dashboard.ui.HeaderDashBoard
-import com.alvarof18.logsheet.login.ui.LoginScreen
 import com.alvarof18.logsheet.ui.theme.LogsheetTheme
 
 class MainActivity : ComponentActivity() {

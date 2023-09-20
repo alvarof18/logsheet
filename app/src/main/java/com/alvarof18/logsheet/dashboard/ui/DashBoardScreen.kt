@@ -63,6 +63,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import com.alvarof18.logsheet.DrawerMenuApp
+import com.alvarof18.logsheet.HeaderProfile
+import com.alvarof18.logsheet.LogSheetTopAppBar
 import com.alvarof18.logsheet.R
 import com.alvarof18.logsheet.config.Routes
 import com.alvarof18.logsheet.dashboard.ui.model.MenuItems
@@ -84,89 +87,9 @@ fun DashBoardScreen(navController: NavController) {
         drawerContent = { DrawerMenuApp(onClick = { scope.launch { navigationState.close() } }) }) {
         Scaffold(topBar = { LogSheetTopAppBar(onClick = { scope.launch { navigationState.open() } }) }) {
             Column(Modifier.padding(it)) {
-                HeaderDashBoard(onClick = { Log.i("Alvaro", "Patitos Feos") })
+                HeaderProfile(onClick = { Log.i("Alvaro", "Patitos Feos") })
                 Spacer(modifier = Modifier.height(24.dp))
                 BodyDashBoard(navController)
-            }
-        }
-    }
-
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun HeaderDashBoard(isDrawerMenu: Boolean = false, onClick: () -> Unit) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.padding(horizontal = 32.dp)
-    ) {
-
-        BadgedBox(
-            badge = {
-                Badge(
-                    modifier = Modifier
-                        .size(9.dp)
-                        .offset(x = -(8).dp, y = 12.dp),
-                    containerColor = Color(0xff43936C)
-                )
-            }) {
-            Image(
-                painter = painterResource(id = R.drawable.profile_sample),
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .size(50.dp)
-                    .clip(CircleShape),
-                contentDescription = null,
-            )
-
-        }
-        Spacer(modifier = Modifier.width(8.dp))
-        Column(verticalArrangement = Arrangement.Center) {
-            Text(
-                text = "Good Morning,",
-                style = MaterialTheme.typography.labelSmall,
-                fontSize = 14.sp,
-                color = Color(0xff5D5F61)
-            )
-
-            Text(
-                text = "Alvaro Figueroa",
-                style = MaterialTheme.typography.labelSmall,
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Medium
-            )
-        }
-        Spacer(modifier = Modifier.weight(1f))
-
-        if (isDrawerMenu) {
-            IconButton(onClick = { onClick() }) {
-                Icon(
-                    imageVector = Icons.Default.Menu,
-                    contentDescription = null,
-                    tint = BluePrimary
-                )
-            }
-        } else {
-            IconButton(
-                onClick = { onClick() },
-                modifier = Modifier
-                    .clip(CircleShape)
-                    .background(Color(0xffEBF0F4))
-            ) {
-                BadgedBox(badge = {
-                    Badge(
-                        modifier = Modifier
-                            .offset(x = (-6.5).dp, y = (11).dp)
-                            .size(7.dp)
-                    )
-                }) {
-
-                    Icon(
-                        imageVector = Icons.Outlined.Notifications,
-                        contentDescription = null,
-                        tint = Color(0xff717375)
-                    )
-                }
             }
         }
     }
@@ -189,7 +112,6 @@ fun BodyDashBoard(navController: NavController) {
         }
 
     }
-
 }
 
 @Composable
@@ -223,83 +145,3 @@ fun BodyDashBoardCard(label: String, navigateTo: () -> Unit) {
 }
 
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun LogSheetTopAppBar(onClick: () -> Unit) {
-    TopAppBar(
-        modifier = Modifier.padding(horizontal = 12.dp),
-        title = {
-            Text(
-                stringResource(id = R.string.dashboard_title),
-                style = MaterialTheme.typography.labelMedium,
-                color = BluePrimary
-            )
-        },
-        navigationIcon = {
-            IconButton(onClick = { onClick() }) {
-                Icon(
-                    imageVector = Icons.Default.Menu,
-                    contentDescription = null,
-                    tint = BluePrimary
-                )
-            }
-        })
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun DrawerMenuApp(onClick: () -> Unit) {
-
-    var selectedItemIndex by rememberSaveable {
-        mutableStateOf(0)
-    }
-
-    ModalDrawerSheet {
-        Spacer(modifier = Modifier.height(32.dp))
-        HeaderDashBoard(onClick = { onClick() }, isDrawerMenu = true)
-        Spacer(modifier = Modifier.height(24.dp))
-        Divider(modifier = Modifier.padding(horizontal = 32.dp))
-        Spacer(modifier = Modifier.height(12.dp))
-        getItemsMenu.forEachIndexed { index, menuItem ->
-            NavigationDrawerItem(
-                label = {
-                    Text(
-                        text = stringResource(id = menuItem.title),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = if (index == selectedItemIndex) Color(0xff347AB6) else Color(
-                            0xff5D5F61
-                        )
-                    )
-                },
-                icon = {
-                    Icon(
-                        painter = painterResource(id = menuItem.icon),
-                        contentDescription = null,
-                        modifier = Modifier.size(28.dp),
-                        tint = Color(0xff347AB6)
-                    )
-                },
-                selected = index == selectedItemIndex,
-                onClick = { selectedItemIndex = index },
-                modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
-            )
-
-        }
-        DrawerFooter()
-    }
-
-}
-
-@Composable
-fun DrawerFooter() {
-    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.BottomStart) {
-        Row(modifier = Modifier
-            .clickable { }
-            .padding(16.dp)) {
-            Icon(imageVector = Icons.Default.Settings, contentDescription = null)
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(text = stringResource(id = R.string.Setting))
-        }
-    }
-
-}

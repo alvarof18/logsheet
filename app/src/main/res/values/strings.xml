@@ -21,4 +21,78 @@
 
     <string name="Setting">Setting</string>
 
+    <string name="generator_title">Generator Control Parameter</string>
+    <string name="generator_subtitle">Generator electrical &amp; control parameter</string>
+
+    <string name="condensing_title">Condensing System &amp; Others</string>
+    <string name="condensing_subtitle">Including GRS, Rock Muffler &amp; Lubrication</string>
+
+    <string name="BOP_title">BOP Electrical</string>
+    <string name="BOP_subtitle">MCC Room, UAT Trafo &amp; UPSr</string>
+
+    <string name="steam_title">Steam &amp; Turbine Parameter</string>
+    <string name="steam_subtitle">Steam Purifier and Turbine Critical Parameter</string>
+
+    <string name="field_title">Field Main Process</string>
+    <string name="field_subtitle">Steam to Condensing System, GRS &amp; Lubrication</string>
+
+    <string name="tech_title"> Weekly FWP Test</string>
+    <string name="tech_subtitle">Including Electrical, Jockey, FWDP</string>
+
+    <string name="ccrhmi_label"> CCR/HMI </string>
+    <string name="field_label">Field</string>
+    <string name="weekly_label">Weekly</string>
+    <string name="information">Information</string>
+    <string name="confirmation">Confirmation</string>
+
+    <string name="form_timestamp">Form Timestamp</string>
+    <string name="form_time">Form Time</string>
+
+    <string name="temperature_label">Temperature(Cº)</string>
+    <string name="humidity_label">Humidity (%)</string>
+    <string name="generator_gross_label">Generator Gross (MW)</string>
+    <string name="own_used_label">400 V Own-Used (kW)</string>
+    <string name="SSGPP_bruto_label">SSGPP Bruto (MW)</string>
+    <string name="generator_voltage_label">Generator Voltage (KV)</string>
+    <string name="generator_current_label">Generator Current (Ampere)</string>
+    <string name="generator_frequency_label">Generator Frequency (HZ)</string>
+    <string name="generator_mvar_label">Generator Mvar (Mvar)</string>
+    <string name="exciter_voltage_label">Exciter Voltage (V)</string>
+    <string name="exciter_current_label">Exciter Current (Ampere)</string>
+    <string name="generator_PF_label">Generator PF</string>
+
+    <string name="alt_target_label">ALR Target (MW)</string>
+    <string name="gov_setting_label">GOV Setting (%)</string>
+    <string name="load_limit_label">Load Limit (%)</string>
+    <string name="setter_90R_label">90R-Setter (PU)</string>
+    <string name="setter_55R_label">55R-Setter (PF)</string>
+    <string name="setter_57R_label">57R-Setter (Mvar)</string>
+    <string name="load_control_mode_label">Load Control Mode (m/alr/dcs)</string>
+    <string name="control_mode_label">Control Mode (Gov/LL)</string>
+    <string name="alt_load_changing_rate_label">ALR Load Changing Rate (%)</string>
+    <string name="IPR_label">IPR (on/off/limitting)</string>
+    <string name="PSS_label">PSS (on/off)</string>
+    <string name="AQR_label">AQR (on/off)</string>
+    <string name="stator_coil_temperature_v1_label">Stator Coil Temperature V1 (Cª)</string>
+    <string name="stator_coil_temperature_w1_label">Stator Coil Temperature W1 (Cº)</string>
+    <string name="stator_coil_temperature_u2_label">Stator Coil Temperature U2 (Cº)</string>
+    <string name="stator_coil_temperature_v2_label">Stator Coil Temperature V2 (Cº)</string>
+    <string name="stator_coil_temperature_w2_label">Stator Coil Temperature W2 (Cº)</string>
+    <string name="air_cooler_temp_inlet_label">Air Cooler Temp. Inlet (Cº)</string>
+    <string name="air_cooler_temp_outlet_label">Air Cooler Temp. Outlet (Cº)</string>
+    <string name="remarks_label">Remarks</string>
+    <string name="submitted_by_label">Submitted By</string>
+    <string name="approver_label">Approver</string>
+
+<!-- Condensing System Form label-->
+    <string name="main_steam_line_label">Main Steam Line</string>
+    <string name="main_steam_pressure_label">Main Steam Pressure (Barg)</string>
+    <string name="mist_eliminator_level_label">Mist Eliminator Level (%)</string>
+    <string name="differential_pressure_label">Differential Pressure (Barg)</string>
+    <string name="aa_001_label">AA-001 (%)</string>
+    <string name="aa_002_label">AA-002 (%)</string>
+    <string name="main_steam_temperature_label">Main Steam Temperature (Cº)</string>
+    <string name="inlet_turbine_label">Inlet Turbine (Barg)</string>
+    <string name="inlet_turbine_label">Total Steam Flow (T/h)</string>
+
 </resources>
